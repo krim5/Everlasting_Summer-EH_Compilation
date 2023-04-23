@@ -4,6 +4,6 @@ traceback.txt
 project.json
 
 .vscode/
-scipts/
+scripts/
 
 *.rpyc
