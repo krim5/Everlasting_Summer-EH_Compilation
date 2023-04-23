@@ -5,3 +5,5 @@ project.json
 
 .vscode/
 scipts/
+
+*.rpyc
