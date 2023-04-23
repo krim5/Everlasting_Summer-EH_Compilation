@@ -31,7 +31,7 @@ init -1600 python:
         developer = [ 'D' ],
         quit = [ 'meta_q', 'alt_K_F4', 'alt_q' ],
         iconify = [ 'meta_m', 'alt_m' ],
-        #help = [ 'K_F1', 'meta_shift_/' ],
+        help = [ 'K_F1', 'meta_shift_/' ],
         choose_renderer = [ 'G' ],
         self_voicing = [ 'K_F13' ],
 
