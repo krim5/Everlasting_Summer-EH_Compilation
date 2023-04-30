@@ -4070,4 +4070,4 @@ label day3_fail:
     with fade3
     $ renpy.pause(3)
     jump day4_fail_morning
-# Decompiled by unrpyc: https://github.com/CensoredUsername/unrpyc
+

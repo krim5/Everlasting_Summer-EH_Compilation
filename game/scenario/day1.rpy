@@ -1420,4 +1420,4 @@ label day1:
     window hide
     $ renpy.pause(3)
     jump day2_main1
-# Decompiled by unrpyc: https://github.com/CensoredUsername/unrpyc
+

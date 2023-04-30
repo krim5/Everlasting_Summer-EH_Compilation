@@ -3511,4 +3511,4 @@ label epilogue_uv_ulya:
             $ show_achievement("uv_unknown_fucken_shit")
             $ achievement.grant("ACH_UV")
     jump uv_ending
-# Decompiled by unrpyc: https://github.com/CensoredUsername/unrpyc
+

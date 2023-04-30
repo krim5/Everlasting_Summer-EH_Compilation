@@ -331,4 +331,4 @@ init -50 python:
                 renpy.game.interface.timeout(1.0)
         def render(self, width, height, st, at):
             return renpy.Render(1, 1)
-# Decompiled by unrpyc: https://github.com/CensoredUsername/unrpyc
+

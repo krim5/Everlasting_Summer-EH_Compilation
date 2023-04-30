@@ -4286,4 +4286,3 @@ label day7_sl_good:
     stop music fadeout 3
     $ renpy.pause(3)
     jump epilogue_sl
-# Decompiled by unrpyc: https://github.com/CensoredUsername/unrpyc

@@ -494,5 +494,3 @@ label custom_splashscreen: ## СВОЙ СПЛЭШ
     $ persistent.firstrun = True
     return
 
-
-# Decompiled by unrpyc: https://github.com/CensoredUsername/unrpyc

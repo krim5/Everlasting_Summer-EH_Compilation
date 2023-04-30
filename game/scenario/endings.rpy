@@ -1038,4 +1038,3 @@ label uv_ending:
     $ renpy.pause(4, hard=True)
 
     return
-# Decompiled by unrpyc: https://github.com/CensoredUsername/unrpyc

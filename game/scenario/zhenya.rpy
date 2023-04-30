@@ -2685,4 +2685,4 @@ label zhenya_route:
     stop music fadeout 5
     pause(5)
     return
-# Decompiled by unrpyc: https://github.com/CensoredUsername/unrpyc
+

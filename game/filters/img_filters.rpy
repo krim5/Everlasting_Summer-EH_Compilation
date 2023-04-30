@@ -27,4 +27,4 @@ python early:
 
     image__filter_gray = lambda: lb__recolor(im.Grayscale)
     image__filter_hue   = lambda: lb__recolor(lambda i: im.MatrixColor(i,im.matrix.hue(180)))
-# Decompiled by unrpyc: https://github.com/CensoredUsername/unrpyc
+

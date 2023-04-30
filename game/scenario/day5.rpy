@@ -4229,4 +4229,3 @@ label day5_un:
     with fade3
     $ renpy.pause(3)
     jump day6_un
-# Decompiled by unrpyc: https://github.com/CensoredUsername/unrpyc

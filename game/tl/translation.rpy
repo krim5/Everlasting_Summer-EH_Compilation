@@ -25,4 +25,4 @@ init -1001 python:
     def get_translation(string):
         renpy.log("%s" % string )
         return translation[string][_preferences.language]
-# Decompiled by unrpyc: https://github.com/CensoredUsername/unrpyc
+

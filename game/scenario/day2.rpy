@@ -2785,4 +2785,4 @@ label day2_main4:
     $ renpy.pause(3)
     $ d2_cardgame_block_rollback = False
     jump day3_main1
-# Decompiled by unrpyc: https://github.com/CensoredUsername/unrpyc
+

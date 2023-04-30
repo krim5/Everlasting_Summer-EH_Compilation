@@ -217,4 +217,4 @@ init -1002 python:
         "lmr_hide" : "Больше не показывать",
         "lmr_skip" : "Пропустить"
 }
-# Decompiled by unrpyc: https://github.com/CensoredUsername/unrpyc
+

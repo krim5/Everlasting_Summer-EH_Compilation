@@ -6434,4 +6434,4 @@ label un_mine_exit:
     stop ambience fadeout 3
     $ renpy.pause(3)
     jump day5_main1
-# Decompiled by unrpyc: https://github.com/CensoredUsername/unrpyc
+

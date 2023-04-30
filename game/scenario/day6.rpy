@@ -4724,4 +4724,4 @@ label day6_dv:
     window hide
     $ renpy.pause(3)
     jump day7_dv
-# Decompiled by unrpyc: https://github.com/CensoredUsername/unrpyc
+

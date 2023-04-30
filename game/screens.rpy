@@ -1666,4 +1666,3 @@ init -2 python:
         ui.add(renpy.Keymap(rollforward=ui.returns(None)))
 
 
-# Decompiled by unrpyc: https://github.com/CensoredUsername/unrpyc

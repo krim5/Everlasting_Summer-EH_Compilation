@@ -103,4 +103,4 @@ init -1600 python:
 
     def _screenshot_callback(fn):
         renpy.notify(__("Saved screenshot as \n%s.") % fn)
-# Decompiled by unrpyc: https://github.com/CensoredUsername/unrpyc
+

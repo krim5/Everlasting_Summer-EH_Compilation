@@ -782,4 +782,4 @@ init -1001 python:
     def stop_music():
         for chnl in ("sound", "sound2", "sound3", "sound_loop", "sound_loop2", "sound_loop3", "ambience", "music"):
             renpy.music.stop(channel=chnl)
-# Decompiled by unrpyc: https://github.com/CensoredUsername/unrpyc
+

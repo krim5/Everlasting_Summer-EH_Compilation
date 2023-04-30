@@ -128,4 +128,4 @@ label nothing_here:
                  ])
     "%(random)s"
     jump _show_map
-# Decompiled by unrpyc: https://github.com/CensoredUsername/unrpyc
+

@@ -92,4 +92,4 @@ init -50 python:
         
         def pick_my_card_last(self):
             return self.pick_my_card()
-# Decompiled by unrpyc: https://github.com/CensoredUsername/unrpyc
+

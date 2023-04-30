@@ -329,4 +329,3 @@ label prologue:
 label opening:
     $ renpy.movie_cutscene("video/opening.ogv")
     jump day1
-# Decompiled by unrpyc: https://github.com/CensoredUsername/unrpyc
