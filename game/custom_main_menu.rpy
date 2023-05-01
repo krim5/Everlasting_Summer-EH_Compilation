@@ -70,7 +70,14 @@ screen custom_main_menu:
     else:
         add "custom_background_none" at sw_transform
         
-    
+    text "{alpha=0.3}{font=[gabriola]}Версия: [config.version]{/font}{/alpha}" size 30 xalign 0.01 yalign 0.99
+
+    vbox:
+        spacing 10
+        xalign 0.95
+        yalign 0.03
+        text "{alpha=0.7}{font=[gabriola]}Бесконечное лето:{/font}{/alpha}" size 70
+        text "{alpha=0.7}{font=[gabriola]}  Endless Horizons{/font}{/alpha}" size 70
 
     vbox:
         spacing 5
@@ -112,9 +119,6 @@ screen custom_main_menu:
 
       
     key "~" action [SetField(persistent, "_use_custom_menu", False), Function(renpy.reload_script), Return()]
-
-    # on "show" action With(renpy.transition(dissolve))
-    # on "hide" action With(renpy.transition(dissolve))
 
 
 ##      Экран загрузки      ##
@@ -217,6 +221,8 @@ screen custom_preferences:
 
     tag menu
     modal True
+
+    # $ change_cursor("custom")
 
     $ bar_null = Frame(get_image("custom_gui/settings/custom_bar_null.png"),36,36)
     $ bar_full = Frame(get_image("custom_gui/settings/custom_bar_full.png"),36,36)

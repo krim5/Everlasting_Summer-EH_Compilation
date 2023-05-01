@@ -33,10 +33,14 @@ init -1 python hide:
         config.window_title = u"Бесконечное лето"
         config.name = "Everlasting Summer"
         config.version = "1.2"
+        config.window_icon = "images/misc/icon.png"
+        config.windows_icon = "images/misc/icon.png"
     else:
         config.window_title = u"Бесконечное лето: Endless Horizons"
         config.name = "Everlasting Summer: EH"
-        config.version = "0.9"
+        config.version = "0.95"
+        config.window_icon = "images/custom_gui/icons/eh_icon.png"
+        config.windows_icon = "images/custom_gui/icons/eh_icon.png"
 
 
 
@@ -44,8 +48,7 @@ init -1 python hide:
     import os
     os.environ['SDL_VIDEO_CENTERED'] = '1'
 
-    config.window_icon = "images/misc/icon.png"
-    config.windows_icon = "images/misc/icon.png"
+    
 
     config.default_fullscreen = True
 
@@ -115,7 +118,7 @@ init -1 python hide:
     config.screenshot_callback = new_screenshot_callback
 
 init python: ## СБОРКА
-    build.directory_name = "Everlasting_Summer-EH_0.9"
+    build.directory_name = "Everlasting_Summer-EH_" + config.version
     build.executable_name = "Everlasting_Summer-EH"
     build.include_update = False
     build.classify('**debug.rpy**', None)
@@ -129,6 +132,7 @@ init python: ## СБОРКА
     build.classify('**.bat', None)
     build.classify('**.txt', None)
     build.classify('**.bak', None)
+    build.classify('**.md', None)
     build.classify('**.rpy#', None)
     build.classify('**.log', None)
     build.classify('**/.**', None)

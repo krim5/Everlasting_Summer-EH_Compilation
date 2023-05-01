@@ -1589,7 +1589,7 @@ init python:
         else:
             config.window_title = u"Бесконечное лето: Endless Horizons"
             config.name = "Everlasting Summer: EH"
-            config.version = "0.9"
+            config.version = "0.95"
         renpy.display.screen.screens[("main_menu", None)] =                   renpy.display.screen.screens[("limb_old_main_menu", None)]
         renpy.display.screen.screens[("game_menu_selector", None)] =          renpy.display.screen.screens[("limb_old_game_menu_selector", None)]
         renpy.display.screen.screens[("choice", None)] =                      renpy.display.screen.screens[("limb_old_choice", None)]

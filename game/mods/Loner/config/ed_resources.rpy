@@ -885,7 +885,7 @@ init -1 python:
         else:
             config.window_title = u"Бесконечное лето: Endless Horizons"
             config.name = "Everlasting Summer: EH"
-            config.version = "0.9"
+            config.version = "0.95"
         renpy.display.screen.screens[("main_menu", None)] =                  renpy.display.screen.screens[("ed_main_menu_old", None)]
         renpy.display.screen.screens[("say", None)] =                        renpy.display.screen.screens[("ed_say_old", None)]
         renpy.display.screen.screens[("nvl", None)] =                        renpy.display.screen.screens[("ed_nvl_old", None)]
@@ -1150,7 +1150,7 @@ label pod_transit_d2_2:
     jump ed_d2_start
 
 label ed_work_prep:
-
+    
     $ ed_save_screens_old()
     $ ed_screens_activ()
     $ ed_achiv_sound = 1

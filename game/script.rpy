@@ -351,6 +351,7 @@ label start: ## СТАРТ
     jump prologue
 
 label splashscreen: ## ПЕРЕД ГЛАВНЫМ МЕНЮ
+
     python:
 
 
@@ -379,6 +380,13 @@ label splashscreen: ## ПЕРЕД ГЛАВНЫМ МЕНЮ
             _preferences.volumes['music'] = .65
             _preferences.volumes['sfx'] = 1.0
             _preferences.volumes['voice'] = .75
+
+            config.window_title = u"Бесконечное лето: Endless Horizons"
+            config.name = "Everlasting Summer: EH"
+            config.version = "0.95"
+            config.window_icon = "images/custom_gui/icons/eh_icon.png"
+            config.windows_icon = "images/custom_gui/icons/eh_icon.png"
+
 
 
     jump splashscreen_2

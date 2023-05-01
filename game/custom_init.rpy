@@ -6,7 +6,6 @@ init 100 python:
     config.mouse["ed_mouse"] = [('images/misc/mouse/ed_mouse.png', 0, 0)]
     config.mouse["limb_mouse"] = [('images/misc/mouse/limb_mouse.png', 0, 0)]
 
-    default_mouse = "default"
 
     def change_cursor(name="default"):
         global default_mouse
@@ -117,4 +116,5 @@ init 100:
             linear .5 alpha 1.0
         on hide:
             linear .5 alpha 0.0
+
 
