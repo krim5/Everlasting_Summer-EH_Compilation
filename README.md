@@ -1,2 +1,33 @@
 # Everlasting_Summer-EH_Compilation
-Compilation of two Endless Horizons mods in Everlasting Summer with new added main menu and minor bug fixes
+
+### **Краткое описание**  :mega:
+---
+> Сборка двух модов Endless Horizons на базе Бесконечного лета с визуальными
+добавлениями/изменениями и устранением мелких ошибок. Всё сделано ради удобства и нужной атмосферы <3
+
+Версия игры на данный момент: 0.95
+
+### **Список изменений** :hammer:
+---
+> - Добавлено своё "угрюмое" главное меню
+> - Убрано/перерисовано __ВСЁ__ оригинальное GUI Бесконечного лета
+> - Изменены иконки на логотип Endless Horizons
+> - Добавлены трейлеры модификаций (по умолчанию включены)
+> - Добавлена возможность выбрать старую музыку для одиночки (по умолчанию выключено)
+> - Исправлено отображение курсоров у модификаций
+> - Убраны лишние настройки, которые могут отвлекать и вызывать ошибки
+
+Клавиша "~" в главном меню позволяет откатиться к Бесконечному лету (не рекомендуется нажимать, может в будущем вылететь ошибка и слететь игровой GUI) :lock_with_ink_pen:
+
+### **Скриншоты** :camera:
+---
+![Скришнот главного меню](readme_files/menu_screenshot.png)
+![Скриншот лимба](readme_files/limb_screenshot.png)
+![Скриншот одиночки](readme_files/loner_screenshot.png)
+
+### **Ссылки** :link:
+---
+[![Одиночка](readme_files/loner.gif "Одиночка в стиме")](https://steamcommunity.com/sharedfiles/filedetails/?id=1126116478)
+[![Лимб](readme_files/limb.gif "Лимб в стиме")](https://steamcommunity.com/workshop/filedetails/?id=1520956125)
+[![Осень](readme_files/autumn.png "Актуальные новости разработки продолжения")](https://vk.com/endhor)
+[![Soviet Games](readme_files/soviet_games.png "Разработчики Бесконечного лета")](https://sovietgames.su/)

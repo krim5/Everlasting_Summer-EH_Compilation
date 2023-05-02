@@ -132,7 +132,6 @@ init python: ## СБОРКА
     build.classify('**.bat', None)
     build.classify('**.txt', None)
     build.classify('**.bak', None)
-    build.classify('**.md', None)
     build.classify('**.rpy#', None)
     build.classify('**.log', None)
     build.classify('**/.**', None)
@@ -144,3 +143,6 @@ init python: ## СБОРКА
     build.classify('game/**.wav', 'archive')
     build.classify('game/**.mp3', 'archive')
 
+    build.classify('**.md', None)
+    build.classify('readme_files/**.png', None)
+    build.classify('readme_files/**.gif', None)
