@@ -467,7 +467,7 @@ screen limb_preferences:
     $ bar_null = Frame(limb_gui_pref + "preferences/bar_null.png",36,36)
     $ bar_full = Frame(limb_gui_pref + "preferences/bar_full.png",36,36)
 
-    window background limb_gui_pref + "preferences/limb_preferences_bg02.png":
+    window background limb_gui_pref + "preferences/limb_preferences_bg.png":
 
         textbutton "Сохранить" text_font gabriola style "log_button" text_style "settings_link" xalign 0.02 yalign 0.08 action ShowMenu('limb_save')
         textbutton "Загрузить" text_font gabriola style "log_button" text_style "settings_link" xalign 0.98 yalign 0.08 action ShowMenu('limb_load')
@@ -1589,7 +1589,7 @@ init python:
         else:
             config.window_title = u"Бесконечное лето: Endless Horizons"
             config.name = "Everlasting Summer: EH"
-            config.version = "0.95"
+            config.version = current_ver
         renpy.display.screen.screens[("main_menu", None)] =                   renpy.display.screen.screens[("limb_old_main_menu", None)]
         renpy.display.screen.screens[("game_menu_selector", None)] =          renpy.display.screen.screens[("limb_old_game_menu_selector", None)]
         renpy.display.screen.screens[("choice", None)] =                      renpy.display.screen.screens[("limb_old_choice", None)]

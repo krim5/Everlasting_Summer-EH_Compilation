@@ -728,9 +728,10 @@ init -1 python:
     ed_font = "mods/Loner/resources/images/gui/menu/var_6.ttf"
     ed_images = "mods/Loner/resources/images/"
     ed_sounds = "mods/Loner/resources/sound/"
-    ed_music = ed_sounds + "music/"
-    if persistent.ed_old_music:
-        ed_music = ed_sounds + "old_music/"
+    if persistent.ed_old_music == False:
+        ed_music = ed_sounds + "music/"
+    else:
+        ed_music = ed_sounds + "old_music/" 
 
   ########################## Файлы ##########################
 
@@ -885,7 +886,7 @@ init -1 python:
         else:
             config.window_title = u"Бесконечное лето: Endless Horizons"
             config.name = "Everlasting Summer: EH"
-            config.version = "0.95"
+            config.version = current_ver
         renpy.display.screen.screens[("main_menu", None)] =                  renpy.display.screen.screens[("ed_main_menu_old", None)]
         renpy.display.screen.screens[("say", None)] =                        renpy.display.screen.screens[("ed_say_old", None)]
         renpy.display.screen.screens[("nvl", None)] =                        renpy.display.screen.screens[("ed_nvl_old", None)]
@@ -1095,7 +1096,7 @@ init 10 python:
             renpy.display.screen.screens[("preferences", None)] =             renpy.display.screen.screens[("ed_preferences", None)]
             
             change_cursor("ed_mouse")
-            if persistent.ed_old_music == False:
+            if not persistent.ed_old_music:
                 config.main_menu_music = ed_sounds + "music/ed_big_daddy_kills.mp3"
             else:
                 config.main_menu_music = ed_sounds + "old_music/ed_big_daddy_kills.mp3"

@@ -1,11 +1,18 @@
 
 ##      Экран кастомного главного меню      ##
 screen custom_main_menu:
-    
+
     tag menu
     modal True
 
+    default flag = renpy.sound.is_playing(channel="ambience")
+
     $ change_cursor("custom")
+    python:
+        if flag == False:
+            renpy.sound.play(sound_rain, channel="ambience", loop=True)
+        else:
+            NullAction()
 
     default n = 0
     showif n == 1:

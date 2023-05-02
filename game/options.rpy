@@ -38,7 +38,7 @@ init -1 python hide:
     else:
         config.window_title = u"Бесконечное лето: Endless Horizons"
         config.name = "Everlasting Summer: EH"
-        config.version = "0.95"
+        config.version = current_ver
         config.window_icon = "images/custom_gui/icons/eh_icon.png"
         config.windows_icon = "images/custom_gui/icons/eh_icon.png"
 

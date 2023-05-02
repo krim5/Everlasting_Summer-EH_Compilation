@@ -239,6 +239,7 @@ screen main_menu:
         use custom_main_menu
     else:
         $ change_cursor()
+        $ renpy.sound.stop(channel="ambience", fadeout = 3.0)
         imagemap:
             auto "images/gui/title_menu/mainmenu_%s.jpg"
             hotspot (439,265,318,621) clicked Start()

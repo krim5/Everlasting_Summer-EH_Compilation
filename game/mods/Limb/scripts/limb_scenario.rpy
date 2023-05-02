@@ -3432,6 +3432,9 @@ init 2 python:
 
 label limb_intro:
 
+    if persistent.trailers_on:
+        $ renpy.movie_cutscene("video/limb_trailer.webm") ####
+
     window hide
     $ save_name = ("Лимб. \nШаг вперёд")
     $ day_time()
@@ -3488,9 +3491,6 @@ label limb_menu:
     return
 
 label limb_prolog:
-
-    if persistent.trailers_on:
-        $ renpy.movie_cutscene("video/limb_trailer.webm") ####
 
     $ limb_set_save_name("Лимб. \nШаг вперёд")
     stop music

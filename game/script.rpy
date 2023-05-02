@@ -381,11 +381,6 @@ label splashscreen: ## ПЕРЕД ГЛАВНЫМ МЕНЮ
             _preferences.volumes['sfx'] = 1.0
             _preferences.volumes['voice'] = .75
 
-            config.window_title = u"Бесконечное лето: Endless Horizons"
-            config.name = "Everlasting Summer: EH"
-            config.version = "0.95"
-            config.window_icon = "images/custom_gui/icons/eh_icon.png"
-            config.windows_icon = "images/custom_gui/icons/eh_icon.png"
 
 
 
@@ -485,8 +480,8 @@ label splashscreen_2:
 
 label custom_splashscreen: ## СВОЙ СПЛЭШ
 
-    if config.developer:
-        return
+    # if config.developer:
+    #     return
 
     scene custom_disclaimer with dissolve
 
@@ -500,5 +495,6 @@ label custom_splashscreen: ## СВОЙ СПЛЭШ
     pause(1.5)
 
     $ persistent.firstrun = True
+
     return
 
