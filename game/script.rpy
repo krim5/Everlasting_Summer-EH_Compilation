@@ -378,7 +378,7 @@ label splashscreen: ## ПЕРЕД ГЛАВНЫМ МЕНЮ
             persistent.hentai = False
 
             _preferences.volumes['music'] = .65
-            _preferences.volumes['sfx'] = 1.0
+            _preferences.volumes['sfx'] = 0.75
             _preferences.volumes['voice'] = .75
 
 

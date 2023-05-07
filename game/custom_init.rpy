@@ -1,7 +1,7 @@
 init -999 python:
 
     ##      Версия      ##
-    current_ver = "0.99"
+    current_ver = "1.0"
 
 
 
@@ -28,7 +28,6 @@ init -999 python:
         global main_menu_music
         config.main_menu_music = str(name)
 
-    ##      Музыка главного меню       ##
     if persistent._use_custom_menu:
         config.main_menu_music = "mods/Limb/resourses/sound/music/pl_uc_good_morning_morgan.mp3"
     else:
@@ -50,7 +49,7 @@ init -999 python:
 
     ##      Музыка Одиночки     ##
     if persistent.ed_old_music is None:
-        persistent.ed_old_music = False
+        persistent.ed_old_music = True
 
     
 init 100:
