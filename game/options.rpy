@@ -121,6 +121,8 @@ init python: ## СБОРКА
     build.directory_name = "Everlasting_Summer-EH_" + config.version
     build.executable_name = "Everlasting_Summer-EH"
     build.include_update = False
+
+    ## Удаление
     build.classify('**debug.rpy**', None)
     build.classify('**hentai.rpy**', None)
     build.classify('**hentai.rpyc**', None)
@@ -137,12 +139,31 @@ init python: ## СБОРКА
     build.classify('**/.**', None)
     build.classify('**/#**', None)
     build.classify('**/thumbs.db', None)
-    build.classify('game/**.png', 'archive')
-    build.classify('game/**.jpg', 'archive')
-    build.classify('game/**.ogg', 'archive')
-    build.classify('game/**.wav', 'archive')
-    build.classify('game/**.mp3', 'archive')
 
+    build.classify('**activate_es_menu.rpy**', None)
+    build.classify('**activate_es_menu.rpyc**', None)
+
+    ## Лишние файлы с гитхаба
     build.classify('**.md', None)
     build.classify('readme_files/**.png', None)
     build.classify('readme_files/**.gif', None)
+
+
+    ## Архивирование бинарных файлов
+    build.archive("loner-data", "all")
+    build.archive("limb-data", "all")
+    build.archive("data", "all")
+    build.archive("update-data", "all")
+
+    build.classify('game/mods/Loner/**', 'loner-data')
+
+    build.classify('game/mods/Limb/**', 'limb-data')
+
+    build.classify('game/update/**', 'update-data')
+
+    build.classify('game/**.png', 'data')
+    build.classify('game/**.jpg', 'data')
+    build.classify('game/**.ogg', 'data')
+    build.classify('game/**.wav', 'data')
+    build.classify('game/**.mp3', 'data')
+    build.classify('game/**.ttf', 'data')

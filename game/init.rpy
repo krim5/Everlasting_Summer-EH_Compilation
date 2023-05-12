@@ -1,4 +1,4 @@
-init -999 python:
+init -900 python:
 
     ##      Версия      ##
     current_ver = "1.0"
@@ -8,8 +8,14 @@ init -999 python:
 
     ##      Курсоры       ##
     config.mouse = {}
-    config.mouse["default"] = [('images/misc/mouse/default_mouse.png', 0, 0)]
-    config.mouse["custom"] = [('images/misc/mouse/custom_mouse.png', 0, 0)]
+
+    if persistent._activate_es_menu:
+        config.mouse["default"] = [('images/misc/mouse/default_mouse.png', 0, 0)]
+        config.mouse["custom"] = [('images/misc/mouse/custom_mouse.png', 0, 0)]
+    else:
+        config.mouse["default"] = [('images/misc/mouse/custom_mouse.png', 0, 0)]
+        config.mouse["custom"] = [('images/misc/mouse/custom_mouse.png', 0, 0)]
+
     config.mouse["ed_mouse"] = [('images/misc/mouse/ed_mouse.png', 0, 0)]
     config.mouse["limb_mouse"] = [('images/misc/mouse/limb_mouse.png', 0, 0)]
 
@@ -21,6 +27,12 @@ init -999 python:
     ##      Активация кастомного меню      ##
     if persistent._use_custom_menu is None:
         persistent._use_custom_menu = True 
+
+    if persistent._activate_es_menu is None:
+        persistent._activate_es_menu = False
+    else:
+        persistent._activate_es_menu = False
+    
     
 
     ##      Музыка главного меню        ##
@@ -52,7 +64,7 @@ init -999 python:
         persistent.ed_old_music = True
 
     
-init 100:
+init:
     ##      Стили       ##
     $ style.custom_save_load_button = Style(style.button)
     $ style.custom_save_load_button.background = "custom_gui/save_load/thumbnail_idle.png"
@@ -154,5 +166,4 @@ init 100:
             linear .5 alpha 1.0
         on hide:
             linear .5 alpha 0.0
-
 

@@ -86,6 +86,7 @@ screen custom_main_menu:
         text "{alpha=0.7}{font=[gabriola]}Бесконечное лето:{/font}{/alpha}" size 70
         text "{alpha=0.7}{font=[gabriola]}  Endless Horizons{/font}{/alpha}" size 70
 
+
     vbox:
         spacing 5
         xalign 0.97
@@ -124,8 +125,8 @@ screen custom_main_menu:
             hover "custom_gui/buttons/exit_hover.png"
             action [ShowMenu('custom_quit'), Play("sound", "sound/button_click.wav")]
 
-      
-    key "~" action [SetField(persistent, "_use_custom_menu", False), Function(renpy.reload_script), Return()]
+    if persistent._activate_es_menu:
+        key "~" action [SetField(persistent, "_use_custom_menu", False), Function(renpy.reload_script), Return()]
 
 
 ##      Экран загрузки      ##

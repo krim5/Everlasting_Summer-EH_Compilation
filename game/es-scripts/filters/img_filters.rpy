@@ -20,7 +20,7 @@ python early:
 
     def image__filter_sepia():
         lb__recolor(im.Sepia)
-        config.overlay_functions.append(lambda:ui.image("filters/sepia.png"))
+        config.overlay_functions.append(lambda:ui.image("es-scripts/filters/sepia.png"))
 
     m = chr(0)*85+chr(128)*86+chr(255)*85
     image__filter_map   = lambda: lb__recolor(lambda i: im.Map(i,m,m,m))

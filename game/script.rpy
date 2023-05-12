@@ -332,7 +332,7 @@ init 5 python:
 
 
 
-label start: ## СТАРТ
+label start: ## СТАРТ ИГРЫ
     $ renpy.music.stop()
     $ skip_text_blocks = True
     $ renpy.block_rollback()
@@ -346,7 +346,6 @@ label start: ## СТАРТ
             persistent.jump_to = False
             renpy.jump(j)
 
-        #translate()
 
     jump prologue
 
@@ -402,7 +401,7 @@ label splashscreen_2:
 
         $ persistent.licensed = True
 
-    if persistent._use_custom_menu: ##
+    if persistent._use_custom_menu: ## ПРЫГ
         jump custom_splashscreen
 
     scene black with dissolve
@@ -480,8 +479,8 @@ label splashscreen_2:
 
 label custom_splashscreen: ## СВОЙ СПЛЭШ
 
-    # if config.developer:
-    #     return
+    if config.developer:
+        return
 
     scene custom_disclaimer with dissolve
 
