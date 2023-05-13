@@ -403,9 +403,8 @@ screen custom_help:
             text "Вопросы по поводу сюжета, продолжения, а также поиск актуальных новостей - {a=https://vk.com/endhor}{font=[gabriola]}СЮДА{/font}{/a}" style "settings_link" font gabriola
             text "Проект на {a=https://github.com/krim5/Everlasting_Summer-EH_Compilation}{font=[gabriola]}Git-Hub{/font}{/a}" style "settings_link" font gabriola
             text "Разработчики модификаций: Endless Horizons (ссылки не будет, команда распалась. Press F)" style "settings_link" font gabriola
+            text "Ссылка на короткую новеллу Endless Horizons под названием \"С Днём Рождения!\": {a=https://drive.google.com/drive/u/0/folders/1R7QHMpiJ18d_8h7R4pnv9JpmmRcxy73U}{font=[gabriola]}ТЫК{/font}{/a}" style "settings_link" font gabriola
             text "Страницы {a=https://steamcommunity.com/sharedfiles/filedetails/?id=1126116478}{font=[gabriola]}Одиночки{/font}{/a} и {a=https://steamcommunity.com/sharedfiles/filedetails/?id=1520956125}{font=[gabriola]}Лимба{/font}{/a} в Steam" style "settings_link" font gabriola
-            null
-            null
             text "Разработчики Лета: {a=https://sovietgames.su/}{font=[gabriola]}Soviet Games{/font}{/font}" style "settings_link" font gabriola
 
         key "f" action(Play("sound", "sound/vine_boom.ogg"))
