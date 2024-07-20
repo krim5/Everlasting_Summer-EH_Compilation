@@ -1,7 +1,7 @@
 init -900 python:
 
     ##      Версия      ##
-    current_ver = "1.0"
+    current_ver = "1.05"
 
 
 
@@ -52,8 +52,8 @@ init -900 python:
 
 
     ##      Шрифты      ##
-    bolero_script = "custom_gui/fonts/bolero_script.ttf"
-    gabriola = "custom_gui/fonts/gabriola.ttf"
+    bolero_script = "images/custom_gui/fonts/bolero_script.ttf"
+    gabriola = "images/custom_gui/fonts/gabriola.ttf"
 
     ##      Трейлеры     ##
     if persistent.trailers_on is None:
@@ -63,15 +63,28 @@ init -900 python:
     if persistent.ed_old_music is None:
         persistent.ed_old_music = True
 
+    ##      Функция удаления сейвов     ##
+    def delete_saves():
+        global persistent
+        
+        saves_dir = "game\saves" 
+        cache_dir = "game\cache" 
+        persistent._clear(progress=True)
+        for s in os.listdir(saves_dir):
+            os.remove(os.path.join(saves_dir, s))
+        
+        for c in os.listdir(cache_dir):
+            os.remove(os.path.join(cache_dir, c))
+
     
 init:
     ##      Стили       ##
     $ style.custom_save_load_button = Style(style.button)
-    $ style.custom_save_load_button.background = "custom_gui/save_load/thumbnail_idle.png"
-    $ style.custom_save_load_button.hover_background = "custom_gui/save_load/thumbnail_hover.png"
-    $ style.custom_save_load_button.selected_background = "custom_gui/save_load/thumbnail_selected.png"
-    $ style.custom_save_load_button.selected_hover_background = "custom_gui/save_load/thumbnail_selected.png"
-    $ style.custom_save_load_button.selected_idle_background = "custom_gui/save_load/thumbnail_selected.png"
+    $ style.custom_save_load_button.background = "images/custom_gui/save_load/thumbnail_idle.png"
+    $ style.custom_save_load_button.hover_background = "images/custom_gui/save_load/thumbnail_hover.png"
+    $ style.custom_save_load_button.selected_background = "images/custom_gui/save_load/thumbnail_selected.png"
+    $ style.custom_save_load_button.selected_hover_background = "images/custom_gui/save_load/thumbnail_selected.png"
+    $ style.custom_save_load_button.selected_idle_background = "images/custom_gui/save_load/thumbnail_selected.png"
 
 
     ##      Грозы-sfx и дождь       ##
@@ -95,7 +108,7 @@ init:
         def play_sfx_thunder_4(trans, st, at):
             renpy.play(sfx_thunder_4, channel="sound")
 
-        # once = False                  НЕ ТРОГАТЬ. УБЬЁТ!
+        # once = False                  НЕ ТРОГАТЬ. УБЬЁТъ!
         # def play_ambience_rain():
         #     global once
         #     if not once:
@@ -166,4 +179,3 @@ init:
             linear .5 alpha 1.0
         on hide:
             linear .5 alpha 0.0
-

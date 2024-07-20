@@ -342,8 +342,9 @@ label ed_d2_start: ## Старт
     th "Так что, стадион или, может быть, набережная? Ты, кстати, не ел сегодня, может, столовая? Совместим приятное с приятным. А на крайняк можно-таки разгромить библиотеку, урвать мольберт и порисовать в свое удовольствие."
 
 label ed_d2_map_start:
-
-    scene bg black
+    stop music fadeout 0.5
+    hide screen pod_tr
+    
     $ _window_hide(dissolve)
     if ed_OB == 2:
         play music ed_sinister_burn fadein 5
@@ -1261,7 +1262,7 @@ label ed_d2_sa_bus_forest_draw_know: ## Что-то знает
     jump pod_transit_d2
 
 label ed_d2_sa_bus_forest_draw_idle: ## Не стоит
-
+    ## 1.05
     $ save_name = "Одиночка.\nДень 2. Рисование."
 
     show blink
@@ -1417,7 +1418,7 @@ label ed_d2_sa_bus_forest_draw_idle: ## Не стоит
     eds "А{w=0.3}.{w=0.3}.{w=0.3}. ага."
     "Я понимал, что дистанцию сохранять бесполезно, поэтому сел на скамью в метре от неё. Поудобнее перехватил гриф."
 
-    show cg ed_scene_un with dissolve
+    show cg ed_scene_un_1 with dissolve
     $ volume(0.5, "music")
     play music ed_guitar_solo fadein 5
 
@@ -1429,7 +1430,10 @@ label ed_d2_sa_bus_forest_draw_idle: ## Не стоит
     $ renpy.pause(30)
     $ _window_show(dissolve)
     stop music fadeout 5
-    $ volume(1, "music")
+    
+    show blinking
+    pause 1
+    show cg ed_scene_un_none
 
     "Я сыграл финальный аккорд, и в тот же момент понял, что упустил её из поля зрения. На секунду. А ей и этого хватило. Есть чему поучиться, да?"
 
@@ -1438,6 +1442,9 @@ label ed_d2_sa_bus_forest_draw_idle: ## Не стоит
     play sound sfx_suspence_bang
 
     "Над ухом раздался голос, одновременно и вызывающий дрожь, и{w=0.3}.{w=0.3}.{w=0.3}. определённо импонирующий мне. Я застыл."
+
+    scene cg ed_scene_un_2 with dissolve
+
     edun "Спасибо, дружочек, что попробовал меня развлечь. Завтра мы с тобой потолкуем серьёзнее. Морально готовься, ха-ха!"
     eds "А без кровопролития никак, сударыня?"
     "Поинтересовался дружочек, отчетливо понимая, что будет дальше."
@@ -1447,7 +1454,7 @@ label ed_d2_sa_bus_forest_draw_idle: ## Не стоит
     "{w=0.3}.{w=0.3}.{w=0.3}."
 
     stop music
-    scene bg black with flash_red
+    scene cg ed_scene_un_red with flash_red
 
     "Надо отдать ей должное. Я почти ничего не почувствовал."
 
@@ -3708,6 +3715,7 @@ label ed_d2_bs_campfire_back: ## Назад
     call darkness_end from _call_darkness_end # Смерть
     jump pod_transit_d2
 
+## 1.05
 label ed_d2_bs_campfire_dream: ## К мечте
 
     $ renpy.pause(1)
@@ -3747,31 +3755,25 @@ label ed_d2_bs_campfire_dream: ## К мечте
 
     stop music fadeout 4
 
-    scene bg ext_beach_fire_un with dissolve
+    scene cg ed_beach_fire_un_shadow_anim with dissolve
     play ed_cycle_sound sfx_ed_campfire fadein 5
 
     "Он ничуть не смущался меня, радостно выстреливая искрами в небо и облизывая последнее длинными алыми языками."
-    "Спиной ко мне на каком-то бревне, которого здесь не было, сидела девушка. Я не сразу её заметил, но в личности не сомневался. Причёска не позволяла."
+    "У костра, которого здесь не было, сидела девушка. Её было тяжело не заметить. В её личности я даже не сомневался, причёска не позволяла."
     "Подходя к костру, я аккуратно обошёл здоровенную яму, которой тут тоже раньше не было."
     "Что за черт?!"
     "Когда я подошёл, войдя в круг тёплого света, девушка повернула голову и посмотрела на меня{w=0.3}.{w=0.3}.{w=0.3}."
 
-    scene bg ext_beach_fire
-    show ed_un_d2_smile_pioneer:
-        pos (0.3, 0.7)
-        anchor(0.5, 0.5)
-    with dissolve
+    scene cg ed_beach_fire_un with dissolve
     play music ed_chained fadein 5
 
     "Языки пламени будто бы отражались в её лице, так же, как луна - в воде."
     "Она была невероятно красива. И абсолютно новая для меня."
     "И то, что я узнал в ней знакомую мне пионерку, ничего не меняло."
     eds "Как мне тебя называть?"
-    "Я кинул взгляд на её странное бревно-путешественника."
-    "Самое обычное бревно."
-    "В длину как я и в ширину как я."
-    "Бревно как бревно."
-    "Один из его концов продолжался в виде глубокой рытвины в песке, уходящей в сторону лагеря и теряющейся где-то в темноте. "
+    "Я ещё раз кинул на неё взгляд{w=0.3}.{w=0.3}.{w=0.3}. И не холодно ли ей сидеть на мёрзлом песке?"
+    "Ей явно стоило прихватить по дороге сюда самое обыкновенное бревно."
+    "Огромного труда не составит найти его где-то в окраине лагеря."
     "Девушка молчала."
     "В отличие от лица, ярко сиявшего отражённым огнём, глаза словно вобрали в себя звёздное небо над нами."
     "Такие же яркие{w=0.3}.{w=0.3}.{w=0.3}. такие же острые, холодные и мёртвые. Огонь мерцал в них, наполняя густым красным маревом."
@@ -3791,9 +3793,9 @@ label ed_d2_bs_campfire_dream: ## К мечте
     "Увереннее перехватив рукоятку, без замаха ударил себя в шею."
 
     play sound sfx_ed_stab fadein 1
-    scene bg ext_beach_fire
-    show ed_un_d2_smile_pioneer:
-        pos (0.3, 0.7)
+    scene bg ext_beach_fire_red
+    show ed_un_d2_smile_pioneer_red:
+        pos (0.6, 0.75)
         anchor(0.5, 0.5)
     with flash_red
 
@@ -3801,25 +3803,36 @@ label ed_d2_bs_campfire_dream: ## К мечте
     "Перестав контролировать тело, осел на бок, уронил руки. Черная кровь толчками выбрасываясь из распоротых артерий, пятная песок."
     "Огненная фигура фурии легко поднялась с бревна{w=0.3}.{w=0.3}.{w=0.3}. подошла ко мне{w=0.3}.{w=0.3}.{w=0.3}. опустилась рядом."
 
-    show ed_un_d2_smile_pioneer:
+    show ed_un_d2_smile_pioneer_red:
         subpixel True
-        pos (0.3, 0.7)
+        pos (0.6, 0.75)
         anchor(0.5, 0.5)
         parallel:
-            linear 1 xalign 0.5
+            linear 1.25 xalign 0.5
         parallel:
-            linear 1 zoom 1.6
+            linear 1.1 zoom 1.6
 
     "Я слабо улыбнулся и показал международный знак мира:"
     eds "Peace{w=0.3}.{w=0.3}.{w=0.3}."
     "Взгляд багровых очей буравил мозг. Мои глаза закатились."
-    "{w=0.3}.{w=0.3}.{w=0.3}."
+
+    show ed_un_d2_smile_pioneer_red:
+        subpixel True
+        pos (0.6, 0.75)
+        anchor (0.5, 0.5)
+        xalign 0.5
+        zoom 1.6
+        parallel:
+            ease 1.5 anchor (0.5, 0.1)
+        parallel:
+            ease 1.5 zoom 1
+    scene bg ext_beach_fire_red_anim with dissolve
+    show blink with dissolve
 
     stop music fadeout 4
 
     stop ambience fadeout 4
     stop ed_cycle_sound fadeout 4
-    show blink with dissolve2
     $ _window_hide(dissolve)
     $ renpy.pause(2)
     $ persistent.ed_d2_achieve_night_dna = True
@@ -3861,7 +3874,7 @@ label ed_d2_bs_shower: ## В душ
     "Паштет вышел на славу, мне кажется. Настолько, что я дополнительно замарался в крови, пока бегал туда-сюда."
     "{w=0.3}.{w=0.3}.{w=0.3}."
 
-    scene bg ext_square_night_blood with dissolve2:
+    scene bg ext_square_night_blood with dissolve2
 
     "Через минут сорок я вышел на площадь, чистый, вымытый и согревшийся, и, старательно обходя лужи и “кочки”, пошёл обратно к пристани."
 
@@ -4213,6 +4226,7 @@ label ed_d2_menu:
     if persistent.ed_d2_achieve_kurlyk == True and persistent.ed_d2_achieve_true_solo == True and persistent.ed_d2_achieve_berserk == True and persistent.ed_d2_achieve_night_dna == True and persistent.ed_d2_achieve_bulki_kefir == True and persistent.ed_d2_achieve_soloplay == True and persistent.ed_lif_achieve_only_chance == True and persistent.ed_lif_achieve_darvin == True and persistent.ed_lif_achieve_my_shadow== True and persistent.ed_lif_achieve_in_the_end == True and persistent.ed_lif_achieve_not_called == True and persistent.ed_lif_achieve_no_harm_in_trying == True and persistent.ed_lif_achieve_un_library == True and persistent.ed_lif_achieve_carousel == True and persistent.ed_lif_achieve_beach_madness == True and persistent.ed_lif_achieve_starboy == True and persistent.ed_lif_achieve_femdom == True and persistent.ed_lif_achieve_lava_floor == True and persistent.ed_lif_achieve_cold_heart == True and persistent.ed_lif_achieve_earth_center == True:
         $ ed_all_d2_achieve = True
 
+    $ Hide("pod_tr", transition=Dissolve(1.0))()
     stop music fadeout 5
     menu:
         "Лопата":

@@ -154,6 +154,21 @@ init python: ## СБОРКА
     build.archive("limb-data", "all")
     build.archive("data", "all")
     build.archive("update-data", "all")
+    build.archive("v1.05-data", "all")
+
+
+    build.classify('game/mods/Loner/**deleted**', 'v1.05-data')
+    build.classify('game/mods/Loner/**ext_beach_fire_red.jpg', 'v1.05-data')
+    build.classify('game/mods/Loner/**ed_beach_fire_un_shadow.jpg', 'v1.05-data')
+    build.classify('game/mods/Loner/**ed_beach_fire_un**.jpg', 'v1.05-data')
+    build.classify('game/mods/Loner/**ed_scene_un_**.jpg', 'v1.05-data')
+    build.classify('game/mods/Loner/**ed_un_d2_scary_shadow_3.png', 'v1.05-data')
+    build.classify('game/mods/Loner/**ed_un_d2_smile_pioneer_red.png', 'v1.05-data')
+
+    build.classify('game/mods/Limb/**us_dwarf.png', 'v1.05-data')
+
+    build.classify('game/images/custom_gui/o_rly/custom_base.png', 'v1.05-data')
+    
 
     build.classify('game/mods/Loner/**', 'loner-data')
 

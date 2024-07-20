@@ -3357,6 +3357,7 @@ init 2 python:
         'gmi' :['Девушка',(0, 222, 255, 255)],
         'nz'  :['Незнакомка',(0, 222, 255, 255)],
         'elf' :['Эльфийка',(0, 222, 255, 255)],
+        'dwa' :['Девочка-гном',(255, 85, 0, 255)],
         'enj' :['Энджиниа',(0, 222, 255, 255)],
         'ts'  :['Царица',(0, 222, 255, 255)],
         'tss' :['Царица',(77, 77, 77, 255)],
@@ -12954,7 +12955,75 @@ label limb_life_fantasy:
     play ambience ambience_catacombs fadein 3 fadeout 3
     scene bg int_mine_coalface with dissolve
 
+    $ renpy.sound.play(sfx_limb_steps_1, loop=True, fadein=3)
+
+    "Мы шли какое-то время, пока не услышали грузные шаги неподалёку. Кто-то будто целенаправленно идёт в нашу сторону[pl_ell]"
+    "Наконец-то первый бой за всё это время?"
+    "Я уже было подумал, что из авантюриста переквалифицировался в няньку."
+    "Элиссон довольная вышла в авангард, хрустя костяшками пальцев."
+    plorc "Ну-ка, доставай свою тычинку[pl_ell] Пользоваться ты хоть ей умеешь?"
+    plenj "Может лучше не стоит[pl_ell]"
+
+    show pl_hand_sword at limb_sword_show
+
+    plpix "Калаул!"
+    plrob "Я в инвиз[pl_ell]"
     "[pl_ell]"
+
+    $ renpy.sound.stop()
+    play music music_list["you_lost_me"] fadein 5
+    show pl_us_dwarf:
+        anchor (1, 1) pos (0.1, 0.85) rotate 35
+        ease 0.75 anchor (0.5, 0.8) pos (0.1, 0.9)
+
+
+    pldwa "Ходят тут всякие[pl_ell] шахту разрабатывать мешают[pl_ell] а кто бурить будет, я вас спрашиваю, а?!"
+    "Ложная тревога. Опять."
+
+    show pl_hand_sword at limb_sword_hide
+
+    "А ведь я обещал себе больше не доставать меч[pl_ell] Это новоприобретённый статус {color=#FF3200}подкаблучника{/color} прокнул?"
+
+    show pl_us_dwarf:
+        anchor (0.5, 0.8) pos (0.1, 0.9)
+        parallel:
+            ease 0.3 rotate 0
+        parallel:
+            ease 0.6 anchor (0.4, 0.5) pos (0.1, 0.75)
+            ease 1.0 pos (0.4, 0.65)
+
+    pldwa "Ау, я с вами разговариваю! Кто, как не рабочий класс?! Ай, проходимцы, тунеядцы[pl_ell]"
+    pldwa "Вы думаете, золото берется из воздуха? Вы так думаете, я вас спрашиваю?!"
+    plpix "Оно белётся у длаконов!"
+    pldwa "Нет, золото берется из пота, крови и грубых мозолистых рук!"
+    pldwa "Рук, которые раньше были нежными девичьими руками!"
+    pldwa "А посмотрите на мою бороду!"
+    pldwa "Она ведь была такой аккуратной, шелковистой[pl_ell] Все, с меня хватит! Наелась досыта."
+    pldwa "Я ненавижу этих людей! Забираю свою кирку и сваливаю отсюда!"
+
+    show pl_us_dwarf:
+        anchor (0.4, 0.5) pos (0.4, 0.65)
+        ease 2 pos (1.1, 0.7)
+
+    "[pl_ell]"
+    plorc "Знаете[pl_ell] А меня очень даже тронула её речь."
+    "Ещё бы не тронула - подумал я про себя."
+
+    show pl_us_dwarf:
+        anchor (0.4, 0.5) pos (1.1, 0.7)
+        ease 0.5 pos (0.85, 0.6) rotate -35
+
+    pldwa "Тьфу вам под ноги."
+
+    show pl_us_dwarf:
+        anchor (0.4, 0.5) pos (0.85, 0.6)
+        ease 0.5 pos (1.1, 0.7) rotate 0
+
+    "[pl_ell]"
+
+    stop music fadeout 5
+
+    plmef "Кхм. Разработка шахты меняет людей[pl_ell] была девочка, а стал гном."
 
     play music music_list["dance_of_fireflies"] fadein 5
     scene bg int_mine_halt at limb_walking with dissolve

@@ -522,6 +522,20 @@ init:
         pause 2
         repeat
 
+    ## 1.05
+    image cg ed_beach_fire_un_shadow_anim:
+        'cg ed_beach_fire_un_shadow'
+        zoom 1.5
+        xalign 0.5 yalign 0.0
+        ease 3 xalign 0.5 yalign 0.7 zoom 2
+        ease 2.5 xalign 0.5 yalign 1.0 zoom 1.0
+
+    image bg ext_beach_fire_red_anim:
+        'bg ext_beach_fire_red'
+        xalign 0.5 yalign 1.0
+        ease 2 xalign 0.5 yalign 0.0 zoom 2.0
+    ## 1.05
+
     image anim ed_quit:
         choice:
             ed_images + "gui/quit_menu/anim_quit_2.jpg" with Dissolve(5.0)
@@ -1148,6 +1162,7 @@ label pod_transit_d2_2:
 
     $ frame_2()
     $ ed_OB += 1
+    show screen pod_tr()
     jump ed_d2_start
 
 label ed_work_prep:

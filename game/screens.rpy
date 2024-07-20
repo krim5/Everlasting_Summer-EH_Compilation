@@ -237,6 +237,7 @@ screen main_menu:
 
     if persistent._use_custom_menu:
         use custom_main_menu
+        #use legacy_main_menu
     else:
         $ change_cursor()
         $ renpy.sound.stop(channel="ambience", fadeout = 3.0)

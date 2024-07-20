@@ -1,3 +1,31 @@
+##      Легаси меню     ##
+# screen legacy_main_menu:
+
+#     tag menu
+#     modal True
+
+#     add "bg ext_beach_sunset"
+    
+#     textbutton "Выход" xalign 0.01 yalign 0.02 action Quit()
+
+#     frame:
+#         xalign 0.5 yalign 0.5
+#         xsize 600 ysize 400
+#         if mods:
+#             side "c b r":
+#                 viewport id "mods":
+#                     draggable True
+#                     mousewheel True
+#                     scrollbars None
+
+#                     has grid 1 len(mods)
+#                     for lbl, name in sorted(mods.iteritems()):
+#                         textbutton name action (SetField(persistent, "jump_to", lbl), Start())
+
+#                 bar value XScrollValue("mods") left_bar "images/misc/none.png" right_bar "images/misc/none.png" thumb "images/misc/none.png" hover_thumb "images/misc/none.png"
+#                 vbar value YScrollValue("mods")
+
+
 
 ##      Экран кастомного главного меню      ##
 screen custom_main_menu:
@@ -377,8 +405,7 @@ screen custom_preferences:
                         textbutton "Выключить" style "log_button" text_style "settings_text" action [ SetField(persistent, "ed_old_music", False), Function(renpy.reload_script) ]
 
 
-                
-                null
+                textbutton "Сброс прогресса" style "log_button" text_style "settings_text" xalign 0.5 action Show("custom_yesno_prompt", None, "Вы уверены, что хотите удалить прогресс?", [ Function(delete_saves), Function(renpy.reload_script) ])
 
             bar value XScrollValue("preferences") left_bar "images/misc/none.png" right_bar "images/misc/none.png" thumb "images/misc/none.png" hover_thumb "images/misc/none.png"
             vbar value YScrollValue("preferences") bottom_bar "images/misc/none.png" top_bar "images/misc/none.png" thumb "images/custom_gui/settings/custom_vthumb.png" thumb_offset -12
@@ -447,3 +474,14 @@ screen custom_quit:
         text_outlines [(3,"#8d8d8d",0,0)]
         text_hover_outlines [(3,"#ff7b02",0,0)]
         action Return()
+
+
+##      Экран сброса прогресса      ##
+screen custom_yesno_prompt(message, yes_action, no_action=Hide("custom_yesno_prompt")):
+
+    modal True
+
+    add get_image("custom_gui/o_rly/custom_base.png")
+    text _(message) text_align 0.5 yalign 0.46 xalign 0.5 color "#64483c" font header_font size 30
+    textbutton "Да" text_font ed_images + "gui/save_load/save_load_font.ttf" text_size 75 style "log_button" text_style "settings_link" yalign 0.65 xalign 0.3 action yes_action
+    textbutton "Нет" text_font ed_images + "gui/save_load/save_load_font.ttf" text_size 75 style "log_button" text_style "settings_link" yalign 0.65 xalign 0.7 action no_action
